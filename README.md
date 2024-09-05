@@ -14,4 +14,4 @@
 - Versionshanterat källkoden med Git
 - Publicera den optimerade webbplatsen på en publikt tillgänglig webbhost.
 
- [Länk till Github-repo för webbtjänst](https://jeja2306-angular1.netlify.app/)
+ [Länk till publicerad webbplats](https://jeja2306-angular1.netlify.app/)
