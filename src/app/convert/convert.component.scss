@@ -1,0 +1,23 @@
+@use '../app.component.scss' as *;
+
+form {
+    background-color: $primary-color;
+    margin-bottom: 1em;
+    width: 100%;
+    padding: 2em;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    border-radius: 0.2em;
+
+    input, select { 
+        width: 100%; box-sizing: border-box;
+        padding: 1em 0;
+    }
+
+    button {
+        width: 100%;
+        height: 50px;
+        background-color: $deviating-color;
+        border: none;
+    }
+}

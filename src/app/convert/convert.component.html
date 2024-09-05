@@ -1,4 +1,38 @@
-<h1>Konvertera</h1>
-<p>Det ska finnas en undersida för konvertering av värden, där användaren kan konvertera mellan olika enheter - från
-        "meter" till "fot" ("feet") och från "celsius" till "fahrenheit" (och vice versa).
-        Detta ska lösas med hjälp av Angulars komponenter och databindning.</p>
+<h1>Konvertera värden</h1>
+
+<form>
+        <div>
+                <label for="value">Värde:</label><br>
+                <input type="number" id="value" [(ngModel)]="value" name="value" required> 
+                <!-- "two way data binding" uppdateras av value-->
+        </div><br>
+
+        <div>
+                <label for ="fromUnit">Från:</label><br>
+                <select id="fromUnit" [(ngModel)]="fromUnit" name="fromUnit">
+                        <option value="meter">Meter</option>
+                        <option value="feet">Fot</option>
+                        <option value="celsius">Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                </select>
+        </div><br>
+
+        <div>
+                <label for="toUnit">Till:</label><br>
+                <select id="toUnit" [(ngModel)]="toUnit" name="toUnit">
+                        <option value="meter">Meter</option>
+                        <option value="feet">Fot</option>
+                        <option value="celsius">Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                </select>                
+        </div><br>
+
+        <div>
+                <button type="button" class="material-symbols-outlined" (click)="convert()">check</button> 
+                <!-- angular-event lyssnar efter klick och kör convertfunktionen i ts -->
+        </div>
+
+        <div>
+                <p>{{ convertedValue }}</p>
+        </div>
+</form>
