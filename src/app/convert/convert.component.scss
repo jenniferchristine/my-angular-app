@@ -8,6 +8,7 @@ form {
     box-sizing: border-box;
     font-family: 'Poppins';
     border-radius: 0.2em;
+    display: block;
 
     input, select { 
         width: 100%; box-sizing: border-box;
@@ -24,4 +25,6 @@ form {
         border-bottom-left-radius: 0.2em;
         border-bottom-right-radius: 0.2em;
     }
+
+    p { width: 100%; padding: 1.5em 0; margin: 0; }
 }
