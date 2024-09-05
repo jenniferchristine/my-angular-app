@@ -15,6 +15,7 @@ form {
         padding: 1em 0 1em 0.2em;
         font-size: 16px;
         border-radius: 0.2em;
+        border: none;
     }
 
     button {
@@ -26,5 +27,9 @@ form {
         border-bottom-right-radius: 0.2em;
     }
 
-    p { width: 100%; padding: 1.5em 0; margin: 0; }
+    p { width: 100%; padding: 1.5em 0; margin: 0; font-style: italic;}
+}
+
+@media only screen and (max-width: 300px) {
+    form { padding: 1em 0.5em 0 0.5em; }
 }

@@ -26,7 +26,7 @@ export class ConvertComponent {
   /* metod för konvertering baserad på enheter och värde */
   convert() {
     if (this.value === null) {
-      this.convertedValue = "Ange ett värde"; // felmeddelande
+      this.convertedValue = "Ange ett värde för konvertering"; // felmeddelande
       return;
     }
   
