@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // ger tillgång till ngmodel för tvåvägs databindning i formulär
 
 @Component({
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms'; // ger tillgång till ngmodel för
   styleUrl: './convert.component.scss'
 })
 
-export class ConvertComponent {
+export class ConvertComponent implements OnChanges { // automatisk anropning när något förändras
   value: number | null = null; // håller värdet som ska konverteras
   fromUnit: string = "meter"; // variabel för enhet
   toUnit: string = "feet";
@@ -24,22 +24,21 @@ export class ConvertComponent {
   availableToUnits: string[] = this.units.length; // initialt tillgängliga enheter för konvertering
 
   /* metod för konvertering baserad på enheter och värde */
-  convert() {
+  convert(): void {
     if (this.value === null) {
       this.convertedValue = "Ange ett värde för konvertering"; // felmeddelande
       return;
     }
-  
     let result: number = 0; // initialt värde
   
     // Utför konvertering baserat på enhetsval
     if (this.fromUnit === "meter" && this.toUnit === "feet") {
       result = this.value * 3.28084; // konvertera till fot
-    } else if (this.fromUnit === 'feet' && this.toUnit === 'meter') {
+    } else if (this.fromUnit === "feet" && this.toUnit === "meter") {
       result = this.value / 3.28084; // konvertera till meter
-    } else if (this.fromUnit === 'celsius' && this.toUnit === 'fahrenheit') {
+    } else if (this.fromUnit === "celsius" && this.toUnit === "fahrenheit") {
       result = (this.value * 9 / 5) + 32; // konvertera till fahrenheit
-    } else if (this.fromUnit === 'fahrenheit' && this.toUnit === 'celsius') {
+    } else if (this.fromUnit === "fahrenheit" && this.toUnit === "celsius") {
       result = (this.value - 32) * 5 / 9; // konvertera till celsius
     } else {
       this.convertedValue = "Du kan endast konvertera längdenheter och temperaturer för sig"; // felmeddelande för ogiltig konvertering
@@ -50,7 +49,7 @@ export class ConvertComponent {
   }
 
   /* metod som anropas när fromUnit ändras */
-  updateAvailableToUnits() {
+  updateAvailableToUnits(): void {
     if (this.fromUnit === "meter" || this.fromUnit === "feet") {
       this.availableToUnits = this.units.length; // bara längdenheter
       if (!this.availableToUnits.includes(this.toUnit)) {
@@ -65,7 +64,7 @@ export class ConvertComponent {
     this.convert(); // uppdatera konverteringen när enheter ändras
   }
 
-  ngOnChanges() { // metod som anropas när datakomponent ändrats
+  ngOnChanges(changes: SimpleChanges): void { // hook som anropas när datakomponent ändras (objekt med info om förändringar)
     this.convert(); // uppdaterar konverteringen
   }
 }
