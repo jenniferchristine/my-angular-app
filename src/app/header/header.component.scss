@@ -1,0 +1,47 @@
+@use '../app.component.scss' as *;
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    max-width: 95%; 
+    margin-top: 50px; 
+
+    img { width: 100px; height: 100px; margin-bottom: 2em; }
+}
+
+nav {
+    background-color: $brighter-color;
+    width: 100%;
+    border-top-left-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+}
+
+ul {
+    list-style: none;
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li { 
+    font-family: 'Poppins'; 
+    margin-right: 20px; 
+
+    &:last-child { margin-right: 0; }
+    .current { border-bottom: 5px solid $bright-color;}
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.material-symbols-outlined {
+    font-size: 34px;
+    font-weight: 500;
+    color: rgb(240, 240, 78);
+}
