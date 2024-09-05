@@ -4,12 +4,13 @@
         <div>
                 <label for="value">Värde:</label><br>
                 <input type="number" id="value" [(ngModel)]="value" name="value" required> 
-                <!-- "two way data binding" uppdateras av value-->
+                <!-- "two way data binding" uppdateras av value -->
         </div><br>
 
         <div>
                 <label for ="fromUnit">Från:</label><br>
                 <select id="fromUnit" [(ngModel)]="fromUnit" name="fromUnit">
+                <!-- "two way data binding" binder värdet till variabeln fromUnit -->
                         <option value="meter">Meter</option>
                         <option value="feet">Fot</option>
                         <option value="celsius">Celsius</option>

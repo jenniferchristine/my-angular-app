@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; // ger tillgång till ngmodel för tvåvägs databindning i formulär
 
 @Component({
   selector: 'app-convert',
@@ -10,23 +10,24 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class ConvertComponent {
-  value: number | null = null;
-  fromUnit: string = "meter";
+  value: number | null = null; // håller värdet som ska konverteras
+  fromUnit: string = "meter"; // variabel för enhet
   toUnit: string = "feet";
-  convertedValue: string = "";
+  convertedValue: string = ""; // lagrar resultat
 
+  /* metod för konvertering baserad på enheter och värde */
   convert() {
-    if (this.value === null) return;
-    let result: number;
+    if (this.value === null) return; // avbryter om värdet är noll
+    let result: number; // lagra resultat
 
     if (this.fromUnit === "meter" && this.toUnit === "feet") {
-      result = this.value * 3.28084;
+      result = this.value * 3.28084; // konverterar till fot
     } else if (this.fromUnit === 'feet' && this.toUnit === 'meter') {
-      result = this.value / 3.28084;
+      result = this.value / 3.28084; // konverterar till meter
     } else if (this.fromUnit === 'celsius' && this.toUnit === 'fahrenheit') {
-      result = (this.value * 9/5) + 32;
+      result = (this.value * 9/5) + 32; // konverterar till fahrenheit
     } else if (this.fromUnit === 'fahrenheit' && this.toUnit === 'celsius') {
-      result = (this.value - 32) * 5/9;
+      result = (this.value - 32) * 5/9; // konverterar till celsius
     } else {
       result = this.value;
     }
@@ -34,7 +35,7 @@ export class ConvertComponent {
     this.convertedValue = `${result} ${ this.toUnit}`;
   }
 
-  ngOnChanges() {
-    this.convert();
+  ngOnChanges() { // metod som anropas när datakomponent ändrats
+    this.convert(); // uppdaterar konverteringen
   }
 }
