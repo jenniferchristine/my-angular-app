@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 $primary-color: #464646;
@@ -23,10 +23,11 @@ main {
     background-color: $bright-color;
 
     p {
-    font-family: 'Roboto';
-    line-height: 24px;
+    font-family: 'Poppins';
+    line-height: 23px;
     letter-spacing: 0.8px;
     font-weight: 300;
+    font-size: 14px;
     background-color: $primary-color;
     box-sizing: border-box;
     padding: 2em;
