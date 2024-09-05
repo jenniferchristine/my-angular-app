@@ -1,0 +1,16 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 0;
+    gap: 1em;
+    width: 100%;
+
+    p { 
+        font-size: 12px; 
+        background: none; 
+        font-family: 'Poppins';
+    }
+}
+
+img { width: 40px; height: 15px; }

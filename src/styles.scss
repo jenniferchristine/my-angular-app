@@ -1,2 +1,33 @@
-@use 'app/app.component.scss';
+@use 'app/app.component.scss' as *;
 
+app-root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+app-header {
+    width: 800px;
+    max-width: 95%;
+}
+
+app-footer {
+    width: 800px;
+    max-width: 95%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $primary-color;
+    width: 100%;
+    color: $brightest-color;
+    padding: 0; 
+    
+    h1, h2, h3 { font-family: 'Poppins'; }
+    h1 { font-size: 26px; text-align: center; margin-bottom: 1.5em; }
+}
