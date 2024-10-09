@@ -1,0 +1,23 @@
+@use '../../styles.scss' as *;
+
+.wrapper { 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .headline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        line-height: 10px;
+        padding: 2em 8em;
+
+        .material-symbols-outlined {
+            font-size: 52px;
+        }
+
+        h1 { font-size: 60px; }
+        h2 { font-size: 20px;}
+    }
+}
